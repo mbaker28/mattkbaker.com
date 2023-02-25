@@ -10,3 +10,5 @@ composer.lock
 ###< phpunit/phpunit ###
 
 /node_modules
+
+/public/build/
