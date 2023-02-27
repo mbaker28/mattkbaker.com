@@ -8,17 +8,10 @@ use Twig\Environment;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-class ProjectController
+final class ProjectController extends AbstractController
 {
-	public function __construct(private Environment $twig)
-	{
-	}
-
-	#[Route('/projects', name: 'project_list')]
 	public function __invoke(): Response
 	{
-		return new Response(
-			$this->twig->render('projects.html.twig')
-		);
+		return $this->render('projects.html.twig');
 	}
 }

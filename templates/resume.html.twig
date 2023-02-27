@@ -1,7 +1,9 @@
 {% extends "base.html.twig" %}
 
+{% block title %}Resume{% endblock %}
+
 {% block content %}
 	<section class="container">
-		Project List WIP
+		{{ parse_markdown('resume.md') }}
 	</section>
 {% endblock %}

@@ -17,18 +17,23 @@ $route = $dispatcher->dispatch($request->getMethod(), $request->getPathInfo());
 $status = Response::HTTP_OK;
 
 $response = null;
-$errorInfo = null;
+$errorInfo = [];
 
 switch ($route[0]) {
     case Dispatcher::NOT_FOUND:
         $status = Response::HTTP_NOT_FOUND;
-        $response = new Response( $container->get(Environment::class)->render('404.html.twig'), $status );
+        $errorInfo['error'] = '404';
+        $errorInfo['title'] = 'Page Not Found';
+        $errorInfo['details'] = 'Sorry, this page does not exist.<br>'
+            . 'You can head back to <a href="/">homepage</a>.';
 
         break;
 
     case Dispatcher::METHOD_NOT_ALLOWED:
         $status = Response::HTTP_METHOD_NOT_ALLOWED;
-        $errorInfo = sprintf('%s not allowed on this route.', $request->getMethod());
+        $errorInfo['error'] = '405';
+        $errorInfo['title'] = 'Method Not Allowed';
+        $errorInfo['details'] = sprintf('%s not allowed on this route.', $request->getMethod());
 
         break;
 
@@ -40,7 +45,9 @@ switch ($route[0]) {
             $response = $container->call($controller, $parameters);
         } catch (Throwable $e) {
             $status = Response::HTTP_INTERNAL_SERVER_ERROR;
-            $errorInfo = $e->getMessage();
+            $errorInfo['error'] = '500';
+            $errorInfo['title'] = 'Internal Server Error';
+            $errorInfo['details'] = $e->getMessage();
         }
 
         break;

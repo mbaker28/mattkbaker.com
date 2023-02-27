@@ -7,16 +7,10 @@ namespace App\Controller;
 use Twig\Environment;
 use Symfony\Component\HttpFoundation\Response;
 
-class HelloWorldController
+final class ResumeController extends AbstractController
 {
-	public function __construct(private Environment $twig)
-	{	
-	}
-
 	public function __invoke(): Response
 	{
-		return new Response(
-			$this->twig->render('hello-world.html.twig')
-		);
+		return $this->render('resume.html.twig');
 	}
 }

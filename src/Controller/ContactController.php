@@ -5,13 +5,12 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Twig\Environment;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-final class HomeController extends AbstractController
+final class ContactController extends AbstractController
 {
 	public function __invoke(): Response
 	{
-		return $this->render('home.html.twig');
+		return $this->render('contact.html.twig');
 	}
 }

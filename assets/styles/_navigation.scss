@@ -6,7 +6,7 @@
 	span {
 		display: inline;
 		font-size: 1.7rem;
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: $font-family;
 		font-weight: 600;
 		color: $fg-color;
 	}
@@ -26,7 +26,9 @@
 	#nav-list {
 		float: right;
 		list-style: none;
-		margin: 0 auto;
+		margin-bottom: 0;
+		margin-top: 0;
+
 		@media only screen and (max-width: 768px) {
 			position: relative;
 			top: 2rem;
@@ -66,12 +68,7 @@
 
 			.separator {
 				@media only screen and (max-width: 768px) {
-					border-top: 2px solid $fg-color;
-					margin: 0 8rem;
-
-					span {
-						display: none;
-					}
+					display: none;
 				}
 			}
 		}
@@ -79,8 +76,23 @@
 		.menu-separator {
 			@media only screen and (max-width: 768px) {
 				border-top: 2px solid $fg-color;
+				margin: 0 8rem;
+
+				span {
+					display: none;
+				}
 			}
 		}
+	}
+
+	#dark-mode-toggle {
+		margin: 1.7rem 0;
+		font-size: 2.4rem;
+		line-height: inherit;
+		bottom: 2rem;
+		left: 2rem;
+		z-index: 100;
+		position: fixed;
 	}
 
 	#menu-toggle {

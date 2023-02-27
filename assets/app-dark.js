@@ -1,0 +1,1 @@
+import './styles/app-dark.scss';

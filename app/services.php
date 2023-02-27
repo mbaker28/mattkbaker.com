@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Twig\TwigFunction;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
+use App\Twig\MarkdownExtension;
 use App\Twig\EntryPointsExtension;
 
 return [
@@ -12,6 +13,7 @@ return [
 		$loader = new FilesystemLoader(__DIR__ . '/../templates');
 		$twig = new Environment($loader, ['debug' => $_ENV['APP_ENV'] === 'dev']);
 		$twig->addExtension(new EntryPointsExtension());
+		$twig->addExtension(new MarkdownExtension());
 
 		return $twig;
 	}

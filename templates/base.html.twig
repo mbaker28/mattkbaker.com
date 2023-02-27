@@ -1,45 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" style="color-scheme: auto;">
     <head>
         {% block head %}
             <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>{% block title %}Matthew Baker{% endblock %}</title>
             <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
             {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
             {% block stylesheets %}
                 {{ entry_style_tags('app') }}
+                {{ entry_style_tags('app-dark') }}
             {% endblock %}
 
             {% block javascripts %}
+                <script src="https://kit.fontawesome.com/2736e4c60a.js" crossorigin="anonymous"></script>
                 {{ entry_script_tags('app') }}
             {% endblock %}
         {% endblock %}
     </head>
-    <body>
+    <body class="colorscheme-auto">
+        <div class="float-container" data-controller="dark-mode-toggle">
+            <a id="dark-mode-toggle" class="colorscheme-toggle" data-action="click->dark-mode-toggle#toggle">
+                <i class="fa fa-adjust fa-fw"></i>
+            </a>
+        </div>
         <main class="wrap">
             <nav class="navigation">
                 <section class="container">
                     {% block header %}
                         <a id="nav-title" href="/">{% block nav_title %}Matthew Baker{% endblock %}</a>
+                        <input type="checkbox" id="menu-toggle">
+                        <label class="menu-button float-right" for="menu-toggle">
+                            <i class="fa fa-bars fa-fw"></i>
+                        </label>
                         <ul id="nav-list">
-                        {% block nav_list %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/projects">Projects</a>
-                            </li>
-                        {% endblock %}
+                            {% block nav_list %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/resume">Resume</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/projects">Projects</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contact">Contact</a>
+                                </li>
+                            {% endblock %}
                         </ul>
                     {% endblock %}
                 </section>
             </nav>
-            <section class="container">
+            <div class="content">
                 {% block content %}{% endblock %}
-            </section>
-            <section class="container">
-                {% block footer %}{% endblock %}
-            </section>
+            </div>
+            <footer class="footer">
+                {% block footer %}
+                    <section class="container">
+                        &copy; 2023 Matthew K. Baker
+                    </section>
+                {% endblock %}
+            </footer>
         </main>
     </body>
 </html>

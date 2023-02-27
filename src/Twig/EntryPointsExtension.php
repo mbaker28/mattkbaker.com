@@ -11,6 +11,7 @@ final class EntryPointsExtension extends AbstractExtension
 {
 	private ?array $entryPoints = null;
 
+	/** @return TwigFunction[] */
 	public function getFunctions(): array
 	{
 		return [

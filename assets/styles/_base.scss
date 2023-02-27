@@ -129,6 +129,11 @@ h6 {
 	}
 }
 
+b,
+strong {
+	font-weight: 700;
+}
+
 .highlight>div,
 .highlight>pre {
 	margin: 2rem 0 2rem;
@@ -226,4 +231,12 @@ img {
 	width: 100%;
 	padding-left: 2rem;
 	padding-right: 2rem;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
 }
