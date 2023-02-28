@@ -7,8 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use FastRoute\Dispatcher;
 
-$container = require __DIR__ . '/../app/bootstrap.php';
-$dispatcher = require __DIR__ . '/../app/routes.php';
+$container = require __DIR__ . '/app/bootstrap.php';
+$dispatcher = require __DIR__ . '/app/routes.php';
 
 $request = Request::createFromGlobals();
 

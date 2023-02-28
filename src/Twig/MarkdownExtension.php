@@ -18,7 +18,7 @@ final class MarkdownExtension extends AbstractExtension
 		];
 	}
 
-	public function parseMarkdown(string $file, string $dir = __DIR__ . '/../../public'): string
+	public function parseMarkdown(string $file, string $dir = __DIR__ . '/../../static'): string
 	{
 		$contents = file_get_contents(rtrim($dir, '\\/') . '/' . $file);
 		return Markdown::defaultTransform($contents);
