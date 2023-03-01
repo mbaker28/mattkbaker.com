@@ -4,6 +4,48 @@
 	margin-top: 1.6rem;
 	margin-bottom: 3.2rem;
 
+	header {
+		margin-top: 6.4rem;
+		margin-bottom: 3.2rem;
+
+		h1 {
+			font-size: 4.2rem;
+			line-height: 4.6rem;
+			margin: 0;
+
+			@media only screen and (max-width: 768px) {
+				font-size: 4rem;
+				line-height: 4.4rem;
+			}
+		}
+	}
+
+	article {
+		details {
+			summary {
+				cursor: pointer;
+			}
+		}
+
+		footer {
+			margin-top: 4rem;
+
+			.see-also {
+				margin: 3.2rem 0;
+
+				h3 {
+					margin: 3.2rem 0;
+				}
+			}
+		}
+
+		p {
+			text-align: justify;
+			text-justify: auto;
+			hyphens: auto;
+		}
+	}
+
 	.avatar img {
 		width: 20rem;
 		height: auto;
@@ -11,14 +53,6 @@
 
 		@media only screen and (max-width: 768px) {
 			width: 10rem;
-		}
-	}
-
-	ul {
-		li {
-			@media only screen and (max-width: 768.1px) {
-				display: flex;
-			}
 		}
 	}
 
