@@ -36,5 +36,5 @@ __Programmer__
 
 ## Education
 
-__Bachelor of Science in Computer Science, 2012 - 2016__  
-*Oklahoma Baptist University*
+Bachelor of Science in Computer Science (2012 - 2016)  
+Oklahoma Baptist University
