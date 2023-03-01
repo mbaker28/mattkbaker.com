@@ -6,10 +6,13 @@ namespace App\Twig;
 
 use Twig\TwigFunction;
 use Twig\Extension\AbstractExtension;
-use Michelf\Markdown;
 
 final class MarkdownExtension extends AbstractExtension
 {
+	public function __construct(private \Parsedown $parsedown)
+	{
+	}
+
 	/** @return TwigFunction[] */
 	public function getFunctions(): array
 	{
@@ -21,6 +24,6 @@ final class MarkdownExtension extends AbstractExtension
 	public function parseMarkdown(string $file, string $dir = __DIR__ . '/../../static'): string
 	{
 		$contents = file_get_contents(rtrim($dir, '\\/') . '/' . $file);
-		return Markdown::defaultTransform($contents);
+		return $this->parsedown->text($contents);
 	}
 }

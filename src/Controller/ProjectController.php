@@ -12,6 +12,9 @@ final class ProjectController extends AbstractController
 {
 	public function __invoke(): Response
 	{
-		return $this->render('projects.html.twig');
+		return $this->render('projects.html.twig', [
+			'title' => 'Projects',
+			'title_link' => '/projects'
+		]);
 	}
 }

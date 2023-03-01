@@ -11,6 +11,9 @@ final class ContactController extends AbstractController
 {
 	public function __invoke(): Response
 	{
-		return $this->render('contact.html.twig');
+		return $this->render('contact.html.twig', [
+			'title' => 'Contact',
+			'title_link' => '/contact'
+		]);
 	}
 }

@@ -13,7 +13,7 @@ return [
 		$loader = new FilesystemLoader(__DIR__ . '/../templates');
 		$twig = new Environment($loader, ['debug' => $_ENV['APP_ENV'] === 'dev']);
 		$twig->addExtension(new EntryPointsExtension());
-		$twig->addExtension(new MarkdownExtension());
+		$twig->addExtension(new MarkdownExtension( new \Parsedown() ));
 
 		return $twig;
 	}

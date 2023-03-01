@@ -1,9 +1,5 @@
-{% extends "base.html.twig" %}
+{% extends "page.html.twig" %}
 
-{% block title %}Resume{% endblock %}
-
-{% block content %}
-	<section class="container">
-		{{ parse_markdown('resume.md') }}
-	</section>
+{% block page_content %}
+	{{ parse_markdown('resume.md') }}
 {% endblock %}

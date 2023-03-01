@@ -11,6 +11,9 @@ final class ResumeController extends AbstractController
 {
 	public function __invoke(): Response
 	{
-		return $this->render('resume.html.twig');
+		return $this->render('resume.html.twig', [
+			'title' => 'Resume',
+			'title_link' => '/resume'
+		]);
 	}
 }
