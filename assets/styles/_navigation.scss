@@ -99,11 +99,19 @@
 		display: none;
 
 		@media only screen and (max-width: 768px) {
-			&:checked+label>i {
+			/*&:checked+label>i {
 				color: $alt-bg-color;
+			}*/
+
+			&:checked+label.menu-button {
+				display: none;
 			}
 
-			&:checked+label+ul {
+			&:checked+label.menu-button+label.menu-close {
+				display: block;
+			}
+
+			&:checked+label+label+ul {
 				visibility: visible;
 				opacity: 1;
 				//max-height: 100rem;
@@ -118,6 +126,23 @@
 		@media only screen and (max-width: 768px) {
 			position: relative;
 			display: block;
+			font-size: 2.4rem;
+			font-weight: 400;
+		}
+
+		i {
+			&:hover,
+			&:focus {
+				color: $alt-fg-color;
+			}
+		}
+	}
+
+	.menu-close {
+		display: none;
+
+		@media only screen and (max-width: 768px) {
+			position: relative;
 			font-size: 2.4rem;
 			font-weight: 400;
 		}
