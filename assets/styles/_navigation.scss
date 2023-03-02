@@ -31,18 +31,18 @@
 
 		@media only screen and (max-width: 768px) {
 			position: relative;
-			top: 2rem;
+			top: -20rem;
 			right: 0;
 			z-index: 5;
 			visibility: hidden;
 			opacity: 0;
 			padding: 0;
-			max-height: 0;
+			max-height: 100rem;
 			width: 100%;
 			background-color: $bg-color;
 			border-top: solid 2px $alt-bg-color;
 			border-bottom: solid 2px $alt-bg-color;
-			transition: opacity 0.25s, max-height 0.15s linear;
+			transition: opacity 0.25s, top 0.20s linear;
 		}
 
 		.nav-item {
@@ -106,7 +106,8 @@
 			&:checked+label+ul {
 				visibility: visible;
 				opacity: 1;
-				max-height: 100rem;
+				//max-height: 100rem;
+				top: 2rem;
 			}
 		}
 	}

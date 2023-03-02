@@ -7,6 +7,6 @@
 	},
 	"scripts": {
 		"build": "encore production --progress",
-		"build:dev": "encore dev --progress"
+		"dev": "encore dev --progress"
 	}
 }
