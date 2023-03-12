@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  php:
+    build:
+      context: ./docker
+    working_dir: /var/www/html
+    command: sh -c "composer install --prefer-dist"
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 80:80
+      - 443:443
+
+  node:
+    build:
+      context: ./docker
+      dockerfile: Node.Dockerfile
+      working_dir: /var/www/html
