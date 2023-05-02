@@ -20,8 +20,8 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-	.addEntry('app', './assets/app.js')
-    .addEntry('app-dark', './assets/app-dark.js')
+	.addEntry('app', './assets/app.ts')
+    .addEntry('app-dark', './assets/app-dark.ts')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
@@ -53,14 +53,14 @@ Encore
     // enables @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
         config.useBuiltIns = 'usage';
-        config.corejs = 3;
+        config.corejs = '3.28';
     })
 
     // enables Sass/SCSS support
     .enableSassLoader()
 
     // uncomment if you use TypeScript
-    //.enableTypeScriptLoader()
+    .enableTypeScriptLoader()
 
     // uncomment if you use React
     //.enableReactPreset()

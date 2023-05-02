@@ -1,6 +1,7 @@
+import { Application } from "@hotwired/stimulus";
 import { startStimulusApp } from "@symfony/stimulus-bridge";
 
-export const app = startStimulusApp(
+export const app: Application = startStimulusApp(
 	require.context(
 		'@symfony/stimulus-bridge/lazy-controller-loader!./controllers',
 		true,
