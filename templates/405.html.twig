@@ -1,0 +1,7 @@
+{% extends 'error.html.twig' %}
+
+{% block error_title %}Method Not Allowed{% endblock %}
+
+{% block error_details %}
+{{ request_method }} not allowed on this route.
+{% endblock %}

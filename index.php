@@ -14,49 +14,29 @@ $request = Request::createFromGlobals();
 
 $route = $dispatcher->dispatch($request->getMethod(), $request->getPathInfo());
 
-$status = Response::HTTP_OK;
+try {
+    $response = match($route[0]) {
+        Dispatcher::NOT_FOUND => new Response(
+            $container->get(Environment::class)->render('404.html.twig'),
+            Response::HTTP_NOT_FOUND
+        ),
 
-$response = null;
-$errorInfo = [];
+        Dispatcher::METHOD_NOT_ALLOWED => new Response(
+            $container->get(Environment::class)->render('405.html.twig', [
+                'request_method' => $request->getMethod()
+            ]),
+            Response::HTTP_METHOD_NOT_ALLOWED
+        ),
 
-switch ($route[0]) {
-    case Dispatcher::NOT_FOUND:
-        $status = Response::HTTP_NOT_FOUND;
-        $errorInfo['error'] = '404';
-        $errorInfo['title'] = 'Page Not Found';
-        $errorInfo['details'] = 'Sorry, this page does not exist.<br>'
-            . 'You can head back to <a href="/">homepage</a>.';
-
-        break;
-
-    case Dispatcher::METHOD_NOT_ALLOWED:
-        $status = Response::HTTP_METHOD_NOT_ALLOWED;
-        $errorInfo['error'] = '405';
-        $errorInfo['title'] = 'Method Not Allowed';
-        $errorInfo['details'] = sprintf('%s not allowed on this route.', $request->getMethod());
-
-        break;
-
-    case Dispatcher::FOUND:
-        $controller = $route[1];
-        $parameters = $route[2];
-
-        try {
-            $response = $container->call($controller, $parameters);
-        } catch (Throwable $e) {
-            $status = Response::HTTP_INTERNAL_SERVER_ERROR;
-            $errorInfo['error'] = '500';
-            $errorInfo['title'] = 'Internal Server Error';
-            $errorInfo['details'] = $e->getMessage();
-        }
-
-        break;
-}
-
-if (!$response) {
+        Dispatcher::FOUND => $container->call($route[1], $route[2])
+    };
+} catch (Throwable $e) {
     $response = new Response(
-        $container->get(Environment::class)->render('error.html.twig', ['errorInfo' => $errorInfo]),
-        $status
+        $container->get(Environment::class)->render('error.html.twig', [
+            'error_title' => 'Internal Server Error',
+            'error_details' => $e->getMessage()
+        ]),
+        Response::HTTP_INTERNAL_SERVER_ERROR
     );
 }
 

@@ -2,6 +2,12 @@
 
 {% block content %}
 
-	<div id="error-info">{{ errorInfo }}</div>
+	<div id="error-info">
+		{% block error_info %}
+			<h3>{% block title %}{{ error_title }}{% endblock %}</h3>
+
+			<p>{% block error_details %}{{ error_details }}{% endblock %}</p>
+		{% endblock %}
+	</div>
 
 {% endblock %}
