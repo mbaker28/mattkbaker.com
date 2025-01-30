@@ -8,7 +8,7 @@ Kansas City, MO
 
 ## Summary
 
-Software Developer with 6 years of PHP development experience in creating applications with frameworks such as [Symfony](https://symfony.com) and developing plugins for [WordPress](https://wordpress.org). Experienced in developing user interfaces with HTML, CSS, and JavaScript and a solid understanding of MySQL.
+Software Developer with 8 years of PHP development experience in creating applications with frameworks such as [Symfony](https://symfony.com) and developing plugins for [WordPress](https://wordpress.org). Experienced in developing user interfaces with HTML, CSS, and JavaScript and a solid understanding of MySQL.
 
 ## Skills
 
