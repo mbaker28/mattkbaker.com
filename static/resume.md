@@ -3,7 +3,7 @@
 ## Matthew Baker
 
 [linkedin.com/in/matthew-baker94](https://linkedin.com/in/matthew-baker94)  
-[mbaker@mattkbaker.com](mailto:mbaker@mattkbaker.com)  
+[mattbakerk@gmail.com](mailto:mattbakerk@gmail.com)  
 Kansas City, MO
 
 ## Summary
