@@ -14,7 +14,7 @@ Software Developer with 8 years of PHP development experience in creating applic
 
 __Languages:__  PHP, JavaScript, NodeJS, SQL  
 __Frameworks:__ React, Symfony  
-__Software:__ VSCode, WordPress, WinSCP  
+__Software:__ VSCode, WordPress, WinSCP, Docker  
 __Tools:__ Git, GitHub, Composer, NPM, WebPack, Linux  
 __Knowledge:__ Object Oriented Programming (OOP), Unit Testing, APIs
 
