@@ -36,5 +36,5 @@ __Programmer | Creekstone Farms Premium Beef LLC | Arkansas City, KS__
 
 ## Education
 
-2012 - 2016
+2012 - 2016  
 __Bachelor of Science in Computer Science | Oklahoma Baptist University | Shawnee, OK__
