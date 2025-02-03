@@ -19,10 +19,15 @@
         {% endblock %}
     </head>
     <body class="colorscheme-auto">
-        <div class="float-container" data-controller="dark-mode-toggle">
-            <a id="dark-mode-toggle" class="colorscheme-toggle" data-action="click->dark-mode-toggle#toggle">
-                <i class="fa fa-adjust fa-fw"></i>
-            </a>
+        <div class="float-container">
+            <div>
+                <a id="download-resume" href="/static/resume.docx"><i class="fa-solid fa-cloud-arrow-down"></i> Download Resume</a>
+            </div>
+            <div data-controller="dark-mode-toggle">
+                <a id="dark-mode-toggle" class="colorscheme-toggle" data-action="click->dark-mode-toggle#toggle">
+                    <i class="fa fa-adjust fa-fw"></i>
+                </a>
+            </div>
         </div>
         <main class="wrap">
             <nav class="navigation">
@@ -42,7 +47,7 @@
                                     <a class="nav-link" href="/">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/resume">Resume</a>
+                                    <a class="nav-link" href="/experience">Experience</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/projects">Projects</a>
@@ -60,8 +65,29 @@
             </div>
             <footer class="footer">
                 {% block footer %}
-                    <section class="container">
-                        &copy; {{ "now"|date("Y") }} Matthew K. Baker
+                    <section class="container flex-column">
+                        <div>
+                            <ul>
+                                <li>
+                                    <a href="https://github.com/mbaker28" title="GitHub">
+                                        <i class="fa fa-2x fa-github"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://linkedin.com/in/matthew-baker94/" title="LinkedIn">
+                                        <i class="fa fa-2x fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:mattbakerk@gmail.com" title="Email">
+                                        <i class="fa fa-2x fa-envelope"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            &copy; {{ "now"|date("Y") }} Matthew K. Baker
+                        </div>
                     </section>
                 {% endblock %}
             </footer>

@@ -3,6 +3,19 @@
 		a {
 			color: $link-color-dark;
 		}
+
+		ul {
+			li {
+				a {
+					color: $fg-color-dark;
+
+					&:hover,
+					&:focus {
+						color: $link-color-dark;
+					}
+				}
+			}
+		}
 	}
 }
 

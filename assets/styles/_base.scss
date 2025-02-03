@@ -233,6 +233,11 @@ img {
 	padding-right: 2rem;
 }
 
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
 .float-right {
 	float: right;
 }
