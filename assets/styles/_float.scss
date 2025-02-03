@@ -21,9 +21,17 @@
 		font-size: 2rem;
 		opacity: 0.5;
 
+		.show-download {
+			display: none;
+		}
+
 		&:hover, &:focus {
 			color: $link-color;
 			opacity: 1;
+
+			.show-download {
+				display: inline;
+			}
 
 			@media only screen and (max-width: 768px) {
 				color: $alt-fg-color;
