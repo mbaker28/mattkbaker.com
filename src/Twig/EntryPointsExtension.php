@@ -58,7 +58,7 @@ final class EntryPointsExtension extends AbstractExtension
 
 	private function getEntry(string $entry): array
 	{
-		$this->entryPoints ??= json_decode( file_get_contents( __DIR__ . '/../../static/build/entrypoints.json' ), true )['entrypoints'];
+		$this->entryPoints ??= json_decode( file_get_contents( __DIR__ . '/../../public/build/entrypoints.json' ), true )['entrypoints'];
 
 		return $this->entryPoints[$entry];
 	}
