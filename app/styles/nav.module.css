@@ -1,0 +1,26 @@
+.navigation {
+	height: 6rem;
+	width: 100%;
+}
+
+.navigation a {
+	display: inline;
+	font-size: 1.7rem;
+	font-family: var(--font-family);
+	font-weight: 600;
+	color: var(--fg-color);
+}
+
+.navigation span {
+	display: inline;
+	font-size: 1.7rem;
+	font-family: var(--font-family);
+	font-weight: 600;
+	color: var(--fg-color);
+}
+
+.navigation a:hover {
+	color: var(--link-color);
+}
+
+.navigation a:focus
