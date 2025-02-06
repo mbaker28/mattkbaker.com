@@ -14,6 +14,10 @@
   --link-color: #1565c0;
   --technology-color: rgb(247, 22, 22);
   --technology-bg-color: rgba(194, 1, 51, 0.1);
+
+  .box-shadow {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +30,10 @@
     --link-color: #42a5f5;
     --technology-color: rgb(94, 234, 212);
     --technology-bg-color: rgba(45, 212, 191, .1);
+
+    .box-shadow {
+    	box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.14), 0 3px 1px -2px rgba(255, 255, 255, 0.2), 0 1px 5px 0 rgba(255, 255, 255, 0.12);
+    }
   }
 }
 
@@ -42,8 +50,16 @@ html {
 
 body {
   color: var(--fg-color);
-  background: var(--bg-color);
+  background-color: var(--bg-color);
   font-family: var(--font-family);
+  font-size: 1.8em;
+  font-weight: 400;
+  line-height: 1.8em;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.6em;
+    line-height: 1.6em;
+  }
 }
 
 a {
@@ -51,14 +67,64 @@ a {
   color: var(--link-color);
   text-decoration: none;
   transition: all 0.25s ease-in;
-}
 
-a:focus, a:hover {
-  text-decoration: underline;
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 p {
   margin: 2rem 0 2rem 0;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  margin-top: 1.6rem;
+  margin-bottom: 3.2rem;
+
+  header {
+    margin-top: 6.4rem;
+    margin-bottom: 3.2rem;
+
+    h1 {
+      font-size: 4.2rem;
+      line-height: 4.6rem;
+      margin: 0;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 4rem;
+        line-height: 4.4rem;
+      }
+    }
+  }
+
+  article {
+    details {
+      summary {
+        cursor: pointer;
+      }
+    }
+
+    footer {
+      margin-top: 4rem;
+
+      .see-also {
+        margin: 3.2rem 0;
+
+        h3 {
+          margin: 3.2rem 0;
+        }
+      }
+    }
+
+    p {
+      text-align: justify;
+      text-justify: auto;
+      hyphens: auto;
+    }
+  }
 }
 
 h1,
@@ -71,110 +137,83 @@ h6 {
   font-weight: 600;
   color: var(--alt-fg-color);
   margin: 4rem 0 2.5rem 0;
-}
 
-h1:hover .heading-link,
-h2:hover .heading-link,
-h3:hover .heading-link,
-h4:hover .heading-link,
-h5:hover .heading-link,
-h6:hover .heading-link {
-  visibility: visible;
-}
+  &:hover .heading-link {
+    visibility: visible;
+  }
 
-h1 .heading-link,
-h2 .heading-link,
-h3 .heading-link,
-h4 .heading-link,
-h5 .heading-link,
-h6 .heading-link {
-  color: var(--link-color);
-  font-weight: inherit;
-  text-decoration: none;
-  font-size: 80%;
-  visibility: hidden;
-}
+  .heading-link {
+    color: var(--fg-color);
+    font-weight: inherit;
+    text-decoration: none;
+    font-size: 80%;
+    visibility: hidden;
+  }
 
-h1 .title-link,
-h2 .title-link,
-h3 .title-link,
-h4 .title-link,
-h5 .title-link,
-h6 .title-link {
-  color: inherit;
-  font-weight: inherit;
-  text-decoration: none;
+  .title-link {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
 }
 
 h1 {
-  font-size: 3rem;
-  line-height: 3.4rem;
-}
+  font-size: 3.2rem;
+  line-height: 3.6rem;
 
-@media (width >= 768px) {
-  h1 {
-    font-size: 3.2rem;
-    line-height: 3.6rem;
+  @media only screen and (max-width: 768px) {
+    font-size: 3rem;
+    line-height: 3.4rem;
   }
 }
 
 h2 {
-  font-size: 2.6rem;
-  line-height: 3rem;
-}
+  font-size: 2.8rem;
+  line-height: 3.2rem;
 
-@media (width >= 768px) {
-  h2 {
-    font-size: 2.8rem;
-    line-height: 3.2rem;
+  @media only screen and (max-width: 768px) {
+    font-size: 2.6rem;
+    line-height: 3rem;
   }
 }
 
 h3 {
-  font-size: 2.2rem;
-  line-height: 2.6rem;
-}
+  font-size: 2.4rem;
+  line-height: 2.8rem;
 
-@media (width >= 768px) {
-  h3 {
-    font-size: 2.4rem;
-    line-height: 2.8rem;
-  }
-}
-
-h4 {
-  font-size: 2rem;
-  line-height: 2.4rem;
-}
-
-@media (width >= 768px) {
-  h4 {
+  @media only screen and (max-width: 768px) {
     font-size: 2.2rem;
     line-height: 2.6rem;
   }
 }
 
-h5 {
-  font-size: 1.8rem;
-  line-height: 2.2rem;
-}
+h4 {
+  font-size: 2.2rem;
+  line-height: 2.6rem;
 
-@media (width >= 768px) {
-  h5 {
+  @media only screen and (max-width: 768px) {
     font-size: 2rem;
     line-height: 2.4rem;
   }
 }
 
-h6 {
-  font-size: 1.6rem;
-  line-height: 2rem;
+h5 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.8rem;
+    line-height: 2.2rem; 
+  }
 }
 
-@media (width >= 768px) {
-  h6 {
-    font-size: 1.8rem;
-    line-height: 2.2rem;
+h6 {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  
+  @media only screen and (max-width: 768px) {
+    font-size: 1.6rem;
+    line-height: 2rem;
   }
 }
 
@@ -197,12 +236,12 @@ pre {
   line-height: 2.6rem;
   overflow-x: auto;
   margin: 0;
-}
 
-pre code {
-  display: inline-block;
-  background-color: inherit;
-  color: inherit;
+  code {
+    display: inline-block;
+    background-color: inherit;
+    color: inherit;
+  }
 }
 
 code {
@@ -252,8 +291,10 @@ img {
   max-width: 100%;
 }
 
-.footnotes ol li p {
-  margin: 0;
+.footnotes {
+  ol li p {
+    margin: 0;
+  }
 }
 
 .wrap {

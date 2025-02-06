@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@/app/styles/globals.css";
+import "@/app/styles/globals.scss";
 import FloatContainer from "@/app/ui/float-container";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
@@ -9,6 +9,24 @@ export const metadata: Metadata = {
   title: "Matthew Baker",
   description: "Matthew Baker's portfolio website",
 };
+
+const footerItems = [
+  {
+    title: 'GitHub',
+    href: 'https://github.com/mbaker28',
+    icon: 'fa fa-2x fa-github'
+  },
+  {
+    title: 'LinkedIn',
+    href: 'https://linkedin.com/in/matthew-baker94',
+    icon: 'fa fa-2x fa-linkedin'
+  },
+  {
+    title: 'Email',
+    href: 'mailto:mattbakerk@gmail.com',
+    icon: 'fa fa-2x fa-envelope'
+  }
+];
 
 export default function RootLayout({
   children,
@@ -28,8 +46,38 @@ export default function RootLayout({
           <FloatContainer />
           <main className="wrap">
             <NavContainer />
-            {children}
+            <div className="content">
+              {children}
+            </div>
           </main>
+          <footer
+            className="w-full text-center text-[1.6rem] leading-8 mb-4"
+          >
+            <section className="container flex flex-col">
+              <div>
+                <ul
+                  className="list-none mt-12 mr-0 mb-4 mr-0 p-0"
+                >
+                  {footerItems.map((item) => {
+                    return (
+                      <li key={item.title} className="inline-block relative">
+                        <a
+                          href={item.href}
+                          title={item.title}
+                          className="text-[color:var(--fg-color)] uppercase ml-4 mr-4 text-[1.4rem] md:text-[1.6rem] hover:text-[color:var(--link-color)] focus:text-[color:var(--link-color)]"
+                        >
+                          <i className={item.icon}></i>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+              <div>
+                &copy; {new Date().getFullYear()} Matthew Baker
+              </div>
+            </section>
+          </footer>
         </ThemeProvider>
       </body>
     </html>

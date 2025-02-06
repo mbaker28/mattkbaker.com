@@ -1,29 +1,62 @@
 'use client';
 
 import Link from "next/link";
-import NavItem from "./nav-item";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
+import styles from "@/app/styles/nav.module.scss";
 
+const links = [
+	{ name: 'Home', href: '/' },
+	{ name: 'Experience', href: '/experience' },
+	{ name: 'Projects', href: '/projects' },
+	{ name: 'Contact', href: '/contact' }
+];
 
 export default function NavContainer() {
+	const [isChecked, setChecked] = useState(false);
+	const pathname = usePathname();
+
+	const openMenu = () => setChecked(true);
+	const closeMenu = () => setChecked(false);
+
 	return (
-		<nav className="h-24 w-full">
+		<nav id="navigation" className={styles.navigation}>
 			<section className="container">
 				<Link
+					id="nav-title"
 					href="/"
-					className="tracking-[0.1rem] inline text-[1.7rem] font-[var(--font-family)] font-semibold text-[var(--fg-color)]"
+					className={styles['nav-title']}
 				>
 					Matthew Baker
 				</Link>
-				<input id="menu-toggle" type="checkbox" className="md:hidden" />
-				<label className="float-right" htmlFor="menu-toggle">
+				<input id="menu-toggle" type="checkbox" className={styles['menu-toggle']} checked={isChecked} readOnly />
+				<label className={`${styles['menu-button']} float-right`} onClick={openMenu} htmlFor="menu-toggle">
+					<i className="fa fa-bars fa-fw"></i>
+				</label>
+				<label className={`${styles['menu-close']} float-right`} onClick={closeMenu} htmlFor="menu-toggle">
 					<i className="fa fa-solid fa-xmark"></i>
 				</label>
-				<ul className="relative -top-[20rem] right-0 z-5 invisible opacity-0 p-0 max-h-[100rem] w-full bg-[var(--bg-color)] border-t-solid border-t-[2px] border-t-[color:var(--alt-bg-color)] border-b-solid border-b-[2px] border-b-[color:var(--alt-bg-color)] transition-opacity">
-					<NavItem href="/">Home</NavItem>
-					<NavItem href="/experience">Experience</NavItem>
-					<NavItem href="/projects">Projects</NavItem>
-					<NavItem href="/contact">Contact</NavItem>
+				<ul id="nav-list" className={styles['nav-list']}>
+					{links.map((link) => {
+						return (
+							<li className={styles['nav-item']} key={link.name}>
+								<Link
+									key={link.name}
+									href={link.href}
+									onClick={closeMenu}
+									className={clsx(
+										{
+											'!text-[color:var(--link-color)] underline': pathname === link.href
+										}
+									)}
+								>
+									{link.name}
+								</Link>
+							</li>
+						);
+					})}
 				</ul>
 			</section>
 		</nav>
