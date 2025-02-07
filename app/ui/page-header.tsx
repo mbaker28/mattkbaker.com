@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 
 export default function PageHeader({ title, href }: { title: string, href: string }) {
