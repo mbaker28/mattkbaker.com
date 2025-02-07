@@ -1,0 +1,10 @@
+services:
+  node:
+    build:
+      context: .
+      target: dev
+    volumes:
+      - ./:/srv/app
+    ports:
+      - "3000:3000"
+    restart: unless-stopped

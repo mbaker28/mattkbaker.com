@@ -1,0 +1,151 @@
+.navigation {
+	height: 6rem;
+	width: 100%;
+
+	a, span {
+		display: inline;
+		font-size: 1.7rem;
+		font-family: var(--font-family);
+		font-weight: 600;
+		color: var(--fg-color);
+	}
+
+	a {
+		&:hover,
+		&:focus {
+			color: var(--link-color);
+		}
+	}
+
+	.nav-title {
+		letter-spacing: 0.1rem;
+		text-transform: uppercase;
+	}
+
+	.nav-list {
+		float: right;
+		list-style: none;
+		margin-bottom: 0;
+		margin-top: 0;
+
+		@media only screen and (max-width: 768px) {
+			position: relative;
+			top: -20rem;
+			right: 0;
+			z-index: 5;
+			visibility: hidden;
+			opacity: 0;
+			padding: 0;
+			max-height: 100rem;
+			width: 100%;
+			background-color: var(--bg-color);
+			border-top: solid 2px var(--alt-bg-color);
+			transition: opacity 0.25s, top 0.20s linear;
+		}
+
+		.nav-item {
+			float: left;
+			margin: 0;
+			position: relative;
+
+			@media only screen and (max-width: 768px) {
+				float: none !important;
+				text-align: center;
+
+				a,
+				span {
+					line-height: 5rem;
+				}
+			}
+
+			a,
+			span {
+				margin-left: 1rem;
+				margin-right: 1rem;
+			}
+
+			.separator {
+				@media only screen and (max-width: 768px) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.menu-separator {
+		@media only screen and (max-width: 768px) {
+			border-top: 2px solid var(--fg-color);
+			margin: 0 8rem;
+
+			span {
+				display: none;
+			}
+		}
+	}
+
+	.menu-toggle {
+		display: none;
+
+		@media only screen and (max-width: 768px) {
+			&:checked+label.menu-button {
+				display: none;
+			}
+
+			&:checked+label.menu-button+label.menu-close {
+				display: block;
+			}
+
+			&:checked+label+label+ul {
+				visibility: visible;
+				opacity: 1;
+				top: 2rem;
+			}
+		}
+	}
+
+	.menu-button {
+		display: none;
+
+		@media only screen and (max-width: 768px) {
+			position: relative;
+			display: block;
+			font-size: 2.4rem;
+			font-weight: 400;
+		}
+
+		i {
+			&:hover,
+			&:focus {
+				color: var(--alt-fg-color);
+			}
+		}
+	}
+
+	.menu-close {
+		display: none;
+
+		@media only screen and (max-width: 768px) {
+			position: relative;
+			font-size: 2.4rem;
+			font-weight: 400;
+		}
+
+		i {
+			&:hover,
+			&:focus {
+				color: var(--alt-fg-color);
+			}
+		}
+	}
+
+	i {
+		color: var(--fg-color);
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			color: var(--link-color);
+		}
+	}
+}
+
