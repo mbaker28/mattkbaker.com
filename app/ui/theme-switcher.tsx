@@ -3,7 +3,14 @@
 import { useTheme } from 'next-themes';
 
 export default function ThemeSwitcher() {
-	const { theme, setTheme } = useTheme();
+	const props = useTheme();
+
+	let { theme } = props;
+	const { systemTheme, setTheme } = props;
+
+	if (theme === 'system') {
+		theme = systemTheme;
+	}
 
 	return (
 		<div className='flex'>
