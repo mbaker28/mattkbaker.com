@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@/app/styles/globals.scss";
+import "@/app/styles/globals.css";
 import FloatContainer from "@/app/ui/float-container";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";

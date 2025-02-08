@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import styles from "@/app/styles/about.module.scss";
+import styles from "@/app/styles/about.module.css";
 
 type Skills = {
   header: string,

@@ -1,6 +1,6 @@
 import PageHeader from "@/app/ui/page-header";
 import { projects } from "@/app/lib/data";
-import styles from "@/app/styles/technologies.module.scss";
+import styles from "@/app/styles/technologies.module.css";
 import Image from "next/image";
 
 export default function Page() {

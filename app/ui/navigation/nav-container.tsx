@@ -5,7 +5,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-import styles from "@/app/styles/nav.module.scss";
+import styles from "@/app/styles/nav.module.css";
 
 const links = [
 	{ name: 'Home', href: '/' },

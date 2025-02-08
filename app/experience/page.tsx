@@ -1,4 +1,4 @@
-import styles from "@/app/styles/technologies.module.scss";
+import styles from "@/app/styles/technologies.module.css";
 import PageHeader from "@/app/ui/page-header";
 import { experience } from "@/app/lib/data";
 import Link from "next/link";
