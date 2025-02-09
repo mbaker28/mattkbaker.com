@@ -37,7 +37,7 @@ export const projects: Project[] = [
 	{
 		title: 'Portfolio Website',
 		href: 'https://github.com/mbaker28/mattkbaker.com',
-		description: `The source code for my portfolio website. Written in <a href="https://nextjs.org" class="no-underline text-inherit hover:text-[color:var(--link-color)]" target="_blank">Next.js</a>.`,
+		description: `The source code for my portfolio website. Written in <a href="https://nextjs.org" class="no-underline hover:text-[color:var(--link-color)]" target="_blank">Next.js</a>.`,
 		image: {
 			src: '/website-thumb.png',
 			alt: 'My portfolio website',
@@ -55,7 +55,7 @@ export const projects: Project[] = [
 	{
 		title: 'URL Shortener',
 		href: 'https://github.com/mbaker28/url-shortener',
-		description: `A simple URL Shortener app written in the <a href="https://symfony.com" class="no-underline text-inherit hover:text-[color:var(--link-color)]" target="_blank">Symfony</a> framework.`,
+		description: `A simple URL Shortener app written in the <a href="https://symfony.com" class="no-underline hover:text-[color:var(--link-color)]" target="_blank">Symfony</a> framework.`,
 		image: {
 			src: '/url-shortener-thumb.png',
 			alt: 'URL Shortener',
