@@ -1,7 +1,13 @@
 export type Skills = {
 	header: string,
-	entries: string[]
+	entries: SkillEntry[]
 };
+
+export type SkillEntry = {
+	title: string,
+	image: ImageSource,
+	href?: string
+}
 
 export type Experience = {
 	company: string,
@@ -16,12 +22,14 @@ export type Experience = {
 export type Project = {
 	title: string,
 	href: string,
-	image: {
-		src: string,
-		alt: string,
-		width: number,
-		height: number
-	},
+	image: ImageSource,
 	description: string,
 	technologies: string[]
 };
+
+export type ImageSource = {
+	src: string,
+	alt: string,
+	width: number,
+	height: number
+}

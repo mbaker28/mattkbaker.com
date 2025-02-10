@@ -4,47 +4,246 @@ export const skills: Skills[] = [
 	{
 		header: 'Languages',
 		entries: [
-		  'PHP',
-		  'JavaScript',
-		  'TypeScript',
-		  'NodeJS',
-		  'SQL'
+			{
+				title: 'PHP',
+				image: {
+					src: '/skills/php.png',
+					alt: 'PHP',
+					width: 512,
+					height: 512
+				},
+				href: 'https://php.net'
+			},
+			{
+				title: 'HTML5',
+				image: {
+					src: '/skills/html5.png',
+					alt: 'HTML5',
+					width: 512,
+					height: 512
+				},
+				href: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5'
+			},
+			{
+				title: 'CSS3',
+				image: {
+					src: '/skills/css3.png',
+					alt: 'CSS3',
+					width: 512,
+					height: 512
+				},
+				href: 'https://developer.mozilla.org/en-US/docs/Web/CSS'
+			},
+			{
+				title: 'JavaScript',
+				image: {
+					src: '/skills/js.png',
+					alt: 'JavaScript',
+					width: 512,
+					height: 512
+				},
+				href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+			},
+			{
+				title: 'TypeScript',
+				image: {
+					src: '/skills/ts.png',
+					alt: 'TypeScript',
+					width: 512,
+					height: 512
+				},
+				href: 'https://typescriptlang.org'
+			},
+			{
+				title: 'MySQL',
+				image: {
+					src: '/skills/mysql.png',
+					alt: 'MySQL',
+					width: 512,
+					height: 512
+				},
+				href: 'https://mysql.com'
+			},
+			{
+				title: 'Microsoft SQL Server',
+				image: {
+					src: '/skills/mssql.png',
+					alt: 'Micrsoft SQL Server',
+					width: 512,
+					height: 512
+				},
+				href: 'https://www.microsoft.com/en-us/sql-server'
+			}
+		]
+	  },
+	  {
+		header: 'Technologies',
+		entries: [
+			{
+				title: 'Node.js',
+				image: {
+					src: '/skills/nodejs.png',
+					alt: 'Node.js',
+					width: 512,
+					height: 512
+				},
+				href: 'https://nodejs.org'
+			},
+			{
+				title: 'WordPress',
+				image: {
+					src: '/skills/wordpress.png',
+					alt: 'WordPress',
+					width: 512,
+					height: 512
+				},
+				href: 'https://wordpress.org'
+			},
+			{
+				title: 'NPM',
+				image: {
+					src: '/skills/npm.png',
+					alt: 'NPM',
+					width: 512,
+					height: 512
+				},
+				href: 'https://npmjs.org'
+			},
+			{
+				title: 'Docker',
+				image: {
+					src: '/skills/docker.png',
+					alt: 'Docker',
+					width: 512,
+					height: 512
+				},
+				href: 'https://docker.com'
+			},
+			{
+				title: 'Git',
+				image: {
+					src: '/skills/git.png',
+					alt: 'Git',
+					width: 512,
+					height: 512
+				},
+				href: 'https://git-scm.com'
+			},
+			{
+				title: 'GitHub',
+				image: {
+					src: '/skills/github.png',
+					alt: 'GitHub',
+					width: 512,
+					height: 512
+				},
+				href: 'https://github.com'
+			},
+			{
+				title: 'Composer',
+				image: {
+					src: '/skills/composer.png',
+					alt: 'Composer',
+					width: 512,
+					height: 512
+				},
+				href: 'https://getcomposer.org'
+			},
+			{
+				title: 'Webpack',
+				image: {
+					src: '/skills/webpack.png',
+					alt: 'Webpack',
+					width: 512,
+					height: 512
+				},
+				href: 'https://webpack.js.org'
+			},
+			{
+				title: 'PostCSS',
+				image: {
+					src: '/skills/postcss.png',
+					alt: 'PostCSS',
+					width: 512,
+					height: 512
+				},
+				href: 'https://postcss.org'
+			},
+			{
+				title: 'Sass',
+				image: {
+					src: '/skills/sass.png',
+					alt: 'Sass',
+					width: 512,
+					height: 512
+				},
+				href: 'https://sass-lang.com'
+			},
+			{
+				title: 'Linux',
+				image: {
+					src: '/skills/linux.png',
+					alt: 'Linux',
+					width: 512,
+					height: 512
+				},
+				href: 'https://linux.org'
+			},
+			{
+				title: 'Redis',
+				image: {
+					src: '/skills/redis.png',
+					alt: 'Redis',
+					width: 512,
+					height: 512
+				},
+				href: 'https://redis.io'
+			}
 		]
 	  },
 	  {
 		header: 'Frameworks',
 		entries: [
-		  'React',
-		  'NextJS',
-		  'Symfony'
-		]
-	  },
-	  {
-		header: 'Software',
-		entries: [
-		  'VSCode',
-		  'WordPress',
-		  'WinSCP',
-		  'Docker'
-		]
-	  },
-	  {
-		header: 'Tools',
-		entries: [
-		  'Git',
-		  'GitHub',
-		  'Composer',
-		  'NPM',
-		  'WebPack',
-		  'Linux'
-		]
-	  },
-	  {
-		header: 'Knowledge',
-		entries: [
-		  'Object Oriented Programming (OOP)',
-		  'Unit Testing',
-		  'APIs'
+			{
+				title: 'React',
+				image: {
+					src: '/skills/react.png',
+					alt: 'React',
+					width: 512,
+					height: 512
+				},
+				href: 'https://react.dev'
+			},
+			{
+				title: 'Next.js',
+				image: {
+					src: '/skills/nextjs.png',
+					alt: 'Next.js',
+					width: 512,
+					height: 512
+				},
+				href: 'https://nextjs.org'
+			},
+			{
+				title: 'Symfony',
+				image: {
+					src: '/skills/symfony.png',
+					alt: 'Symfony',
+					width: 512,
+					height: 512
+				},
+				href: 'https://symfony.com'
+			},
+			{
+				title: 'Tailwind CSS',
+				image: {
+					src: '/skills/tailwindcss.png',
+					alt: 'Tailwind CSS',
+					width: 512,
+					height: 512
+				},
+				href: 'https://tailwindcss.com'
+			}
 		]
 	  }
 ];

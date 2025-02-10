@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import SkillsBlock from "@/app/ui/skills-block";
 import { skills } from "@/app/lib/data";
 import styles from "@/app/styles/about.module.css";
 
@@ -10,7 +11,7 @@ export default function Home() {
       className="container flex items-center justify-center"
     >
       <div className={styles.about}>
-        <div className="box-shadow">
+        <div className="box-shadow bg-white dark:bg-zinc-800">
           <div className="inline-block">
             <Image
               src="/avatar.png"
@@ -26,30 +27,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="box-shadow p-[5px] text-left">
-          <h1>Skills</h1>
-
-          <div>
-            {skills.map((item) => {
-              return (
-                <div key={item.header} className="grid mb-12 md:grid-cols-8 md:gap-4">
-                  <div className="md:col-span-2">
-                    <strong>{item.header}</strong>
-                  </div>
-                  <div className="md:col-span-6">
-                    <ul>
-                      {item.entries.map((entry) => {
-                        return (
-                          <li key={entry}>{entry}</li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <SkillsBlock className="box-shadow bg-white dark:bg-zinc-800" />
       </div>
     </section>
   );
