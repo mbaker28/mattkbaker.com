@@ -45,7 +45,7 @@ export default function Contact() {
 			<div className="mb-5">
 				<label
 					htmlFor="email"
-					className="mb-3 block text-base font-medium"
+					className="mb-3 block font-medium"
 				>
 					Email Address
 				</label>
