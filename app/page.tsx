@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import SkillsBlock from "@/components/skills-block";
-import { skills } from "@/app/lib/data";
 import styles from "@/app/styles/about.module.css";
 
 export default function Home() {
