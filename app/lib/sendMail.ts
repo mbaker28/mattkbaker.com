@@ -9,6 +9,8 @@ export async function sendMail(data: FormData) {
 
 		return response.message;
 	} catch (err) {
+		alert(err);
+
 		return err;
 	}
 }
