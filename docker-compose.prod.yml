@@ -1,4 +1,5 @@
 services:
   node:
     build:
-    target: prod
+      context: .
+      target: prod

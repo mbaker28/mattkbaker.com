@@ -7,12 +7,8 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /srv/app
 
-# RUN npm install -g corepack@latest && \
-# 	corepack enable && \
-# 	corepack prepare --activate pnpm@latest && \
-# 	pnpm config -g set store-dir /.pnpm-store
-
-RUN npm install -g npm@latest
+RUN npm install -g pnpm@latest && \
+	pnpm config -g set store-dir /.pnpm-store
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
@@ -23,16 +19,17 @@ EXPOSE 3000
 ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
-CMD ["sh", "-c", "npm install --save-dev; npm run dev"]
+CMD ["sh", "-c", "pnpm install; pnpm run dev"]
 
 FROM base AS builder
 
-COPY --link package-lock.json ./
+COPY --link pnpm-lock.yaml ./
+RUN pnpm fetch --prod
 
 COPY --link . .
 
-RUN npm install && \
-	npm run build
+RUN pnpm install --frozen-lockfile --offline --prod && \
+	pnpm run build
 
 # Production image, copy all the files and run next
 FROM node_upstream AS prod
