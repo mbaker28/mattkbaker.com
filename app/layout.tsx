@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "@/app/styles/globals.css";
-import FloatContainer from "@/app/ui/float-container";
+import FloatContainer from "@/components/float-container";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
-import NavContainer from "./ui/navigation/nav-container";
+import NavContainer from "../components/navigation/nav-container";
 
 export const metadata: Metadata = {
   title: "Matthew Baker",

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import SkillsBlock from "@/app/ui/skills-block";
+import SkillsBlock from "@/components/skills-block";
 import { skills } from "@/app/lib/data";
 import styles from "@/app/styles/about.module.css";
 

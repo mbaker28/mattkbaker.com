@@ -1,4 +1,4 @@
-import PageHeader from "@/app/ui/page-header";
+import PageHeader from "@/components/page-header";
 import { projects } from "@/app/lib/data";
 import styles from "@/app/styles/technologies.module.css";
 import Image from "next/image";

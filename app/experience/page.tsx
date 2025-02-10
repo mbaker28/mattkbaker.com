@@ -1,5 +1,5 @@
 import styles from "@/app/styles/technologies.module.css";
-import PageHeader from "@/app/ui/page-header";
+import PageHeader from "@/components/page-header";
 import { experience } from "@/app/lib/data";
 import Link from "next/link";
 

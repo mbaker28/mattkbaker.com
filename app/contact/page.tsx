@@ -1,10 +1,13 @@
-import PageHeader from "../ui/page-header";
+import PageHeader from "@/components/page-header";
+import Contact from "@/components/contact";
 
 export default function Page() {
 	return (
 		<section className="container">
 			<PageHeader title="Contact" href="/contact" />
-			<strong>Email:</strong> <a href="mailto:mattbakerk@gmail.com">mattbakerk@gmail.com</a>
+			<div className="box-shadow bg-white dark:bg-zinc-800 p-6">
+				<Contact />
+			</div>
 		</section>
 	);
 }
