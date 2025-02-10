@@ -1,61 +1,8 @@
 'use client';
 
 import Image from "next/image";
+import { skills } from "@/app/lib/data";
 import styles from "@/app/styles/about.module.css";
-
-type Skills = {
-  header: string,
-  entries: string[]
-}
-
-const skills: Skills[] = [
-  {
-    header: 'Languages',
-    entries: [
-      'PHP',
-      'JavaScript',
-      'TypeScript',
-      'NodeJS',
-      'SQL'
-    ]
-  },
-  {
-    header: 'Frameworks',
-    entries: [
-      'React',
-      'NextJS',
-      'Symfony'
-    ]
-  },
-  {
-    header: 'Software',
-    entries: [
-      'VSCode',
-      'WordPress',
-      'WinSCP',
-      'Docker'
-    ]
-  },
-  {
-    header: 'Tools',
-    entries: [
-      'Git',
-      'GitHub',
-      'Composer',
-      'NPM',
-      'WebPack',
-      'Linux'
-    ]
-  },
-  {
-    header: 'Knowledge',
-    entries: [
-      'Object Oriented Programming (OOP)',
-      'Unit Testing',
-      'APIs'
-    ]
-  }
-];
 
 export default function Home() {
   return (

@@ -1,3 +1,8 @@
+export type Skills = {
+	header: string,
+	entries: string[]
+};
+
 export type Experience = {
 	company: string,
 	jobTitle: string,

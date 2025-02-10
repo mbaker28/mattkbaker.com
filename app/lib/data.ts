@@ -1,4 +1,53 @@
-import { Experience, Project } from "./definitions";
+import type { Experience, Project, Skills } from "./definitions";
+
+export const skills: Skills[] = [
+	{
+		header: 'Languages',
+		entries: [
+		  'PHP',
+		  'JavaScript',
+		  'TypeScript',
+		  'NodeJS',
+		  'SQL'
+		]
+	  },
+	  {
+		header: 'Frameworks',
+		entries: [
+		  'React',
+		  'NextJS',
+		  'Symfony'
+		]
+	  },
+	  {
+		header: 'Software',
+		entries: [
+		  'VSCode',
+		  'WordPress',
+		  'WinSCP',
+		  'Docker'
+		]
+	  },
+	  {
+		header: 'Tools',
+		entries: [
+		  'Git',
+		  'GitHub',
+		  'Composer',
+		  'NPM',
+		  'WebPack',
+		  'Linux'
+		]
+	  },
+	  {
+		header: 'Knowledge',
+		entries: [
+		  'Object Oriented Programming (OOP)',
+		  'Unit Testing',
+		  'APIs'
+		]
+	  }
+];
 
 export const experience: Experience[] = [
 	{
