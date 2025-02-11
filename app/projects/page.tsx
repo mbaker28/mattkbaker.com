@@ -2,6 +2,12 @@ import PageHeader from "@/components/page-header";
 import { projects } from "@/app/lib/data";
 import styles from "@/app/styles/technologies.module.css";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: 'Projects | Matthew Baker',
+	description: 'Projects page'
+};
 
 export default function Page() {
 	return (

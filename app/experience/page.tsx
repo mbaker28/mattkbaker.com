@@ -1,7 +1,12 @@
 import styles from "@/app/styles/technologies.module.css";
 import PageHeader from "@/components/page-header";
 import { experience } from "@/app/lib/data";
-import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: 'Experience | Matthew Baker',
+	description: 'Experience page'
+};
 
 export default function Page() {
 	return (

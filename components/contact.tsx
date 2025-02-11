@@ -1,32 +1,23 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useActionState } from 'react';
 import { sendMail } from "@/app/lib/sendMail";
 import styles from "@/app/styles/submit-button.module.css";
 
-export type FormData = {
-	name: string,
-	email: string,
-	message: string
+const initialState = {
+	name: '',
+	email: '',
+	message: '',
+	status: ''
 };
 
 export default function Contact() {
-	const { register, handleSubmit } = useForm<FormData>();
-	const [status, setStatus] = useState('');
-	const [buttonClass, setButtonClass] = useState('');
+	const [state, formAction, isPending] = useActionState(sendMail, initialState);
 
-	const onSubmit = async (data: FormData) => {
-		setButtonClass(styles.loading);
-
-		const message = await sendMail(data);
-
-		setStatus(message);
-		setButtonClass('');
-	}
+	const buttonClass = isPending ? styles.loading : '';
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form action={formAction}>
 			<div className="mb-5">
 				<label
 					htmlFor="name"
@@ -35,11 +26,13 @@ export default function Contact() {
 					Full Name
 				</label>
 				<input
+					id="name"
 					type="text"
+					name= "name"
+					defaultValue={state.name}
 					placeholder="Full Name"
 					className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
 					required={true}
-					{...register('name', { required: true })}
 				/>
 			</div>
 			<div className="mb-5">
@@ -50,11 +43,13 @@ export default function Contact() {
 					Email Address
 				</label>
 				<input
+					id="email"
 					type="email"
+					name="email"
+					defaultValue={state.email}
 					placeholder="example@domain.com"
 					className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
 					required={true}
-					{...register('email', { required: true })}
 				/>
 			</div>
 			<div className="mb-5">
@@ -65,11 +60,13 @@ export default function Contact() {
 					Message
 				</label>
 				<textarea
+					id="message"
 					rows={4}
+					name="message"
+					defaultValue={state.message}
 					placeholder="Type your message"
 					className="w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
 					required={true}
-					{...register('message', { required: true })}
 				/>
 			</div>
 			<div className="mb-5">
@@ -78,7 +75,7 @@ export default function Contact() {
 				</button>
 			</div>
 			<div>
-				<span className="w-full font-medium">{status}</span>
+				<span aria-live='polite' role="status" className="w-full font-medium">{state?.status}</span>
 			</div>
 		</form>
 	);
