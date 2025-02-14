@@ -14,6 +14,9 @@ export default function Page() {
 		<section className="container">
 			<article>
 				<PageHeader title="Projects" href="/projects" />
+				<p>
+					A list of open source projects I have worked on.
+				</p>
 				<div>
 					{projects.map(project => {
 						return (
