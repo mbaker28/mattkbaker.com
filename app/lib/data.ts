@@ -307,8 +307,8 @@ export const projects: Project[] = [
 		image: {
 			src: '/url-shortener-thumb.png',
 			alt: 'URL Shortener',
-			width: 2296,
-			height: 1277
+			width: 2518,
+			height: 1276
 		},
 		technologies: [
 			'PHP',
