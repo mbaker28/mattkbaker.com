@@ -303,7 +303,7 @@ export const projects: Project[] = [
 	{
 		title: 'URL Shortener',
 		href: 'https://github.com/mbaker28/url-shortener',
-		description: `A simple URL Shortener app written in the <a href="https://symfony.com" class="no-underline hover:text-[color:var(--link-color)]" target="_blank">Symfony</a> framework.`,
+		description: `A simple URL Shortener app written with <a href="https://nextjs.org" class="no-underline hover:text-[color:var(--link-color)]" target="_blank">Next.js</a> as the frontend and <a href="https://symfony.com" class="no-underline hover:text-[color:var(--link-color)]" target="_blank">Symfony</a> as the backend.`,
 		image: {
 			src: '/url-shortener-thumb.png',
 			alt: 'URL Shortener',
@@ -314,6 +314,9 @@ export const projects: Project[] = [
 			'PHP',
 			'JavaScript',
 			'TypeScript',
+			'React',
+			'Next.js',
+			'Tailwind CSS',
 			'Symfony',
 			'MySQL'
 		]
