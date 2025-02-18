@@ -21,7 +21,8 @@ export const skills: Skills[] = [
 					alt: 'C#',
 					width: 512,
 					height: 512
-				}
+				},
+				href: 'https://learn.microsoft.com/en-us/dotnet/csharp'
 			},
 			{
 				title: 'HTML5',
