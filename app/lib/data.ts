@@ -15,6 +15,16 @@ export const skills: Skills[] = [
 				href: 'https://php.net'
 			},
 			{
+				title: 'Python',
+				image: {
+					src: '/skills/python.png',
+					alt: 'Python',
+					width: 512,
+					height: 512
+				},
+				href: 'https://www.python.org'
+			},
+			{
 				title: 'C#',
 				image: {
 					src: '/skills/csharp.png',
@@ -245,6 +255,26 @@ export const skills: Skills[] = [
 				href: 'https://symfony.com'
 			},
 			{
+				title: 'Laravel',
+				image: {
+					src: '/skills/laravel.png',
+					alt: 'Laravel',
+					width: 512,
+					height: 512
+				},
+				href: 'https://laravel.com'
+			},
+			{
+				title: 'Django',
+				image: {
+					src: '/skills/django.png',
+					alt: 'Django',
+					width: 512,
+					height: 512
+				},
+				href: 'https://djangoproject.com'
+			},
+			{
 				title: '.NET',
 				image: {
 					src: '/skills/dotnet.png',
@@ -281,6 +311,9 @@ export const experience: Experience[] = [
 			'JavaScript',
 			'TypeScript',
 			'WordPress',
+			'HTML5',
+			'CSS',
+			'SCSS',
 			'MySQL'
 		]
 	},
@@ -291,12 +324,14 @@ export const experience: Experience[] = [
 		href: 'https://creekstonefarms.com',
 		dateFrom: 2017,
 		dateTo: 2021,
-		jobDescription: `Used PHP along with JavaScript to design web-based reports for employees. Wrote PHP scripts to send automated reports and fix data within production database. Used C# and ASP.NET to write and maintain the New Product Request application, greatly improving the process for employees to create new products. Developed automated process for Walmart Inc. to pull live data to SFTP server for the SAP. Trained coworkers on employee dashboard to improve effectiveness and instigated suggestions for improvements. Created views and automated reports in ERP system using SQL.`,
+		jobDescription: `Used PHP and JavaScript to design web-based reports for employees. Wrote PHP scripts to send automated reports and fix data within production database. Used C# and ASP.NET to write and maintain the New Product Request application, greatly improving the process for employees to create new products. Developed automated process for Walmart Inc. to pull live data to SFTP server for the SAP. Trained coworkers on employee dashboard to improve effectiveness and instigated suggestions for improvements. Created views and automated reports in ERP system using SQL Server. Mentored new programmers and trained them on the dashboard application and technology stack.`,
 		technologies: [
 			'PHP',
 			'JavaScript',
 			'C#',
 			'.NET',
+			'HTML5',
+			'CSS',
 			'MS SQL'
 		]
 	}
