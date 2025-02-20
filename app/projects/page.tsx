@@ -20,7 +20,7 @@ export default function Page() {
 				<div>
 					{projects.map(project => {
 						return (
-							<div key={project.title} className="box-shadow p-6 mb-12 bg-white dark:bg-zinc-800">
+							<div key={project.title} className="box-shadow p-6 mb-12 bg-white dark:bg-zinc-700">
 								<div className="grid md:grid-cols-8 md:gap-8">
 									<div className="md:col-span-6 md:order-2">
 										<h3 className="font-medium leading-snug m-0">

@@ -10,7 +10,7 @@ export default function Home() {
       className="container flex items-center justify-center"
     >
       <div className={styles.about}>
-        <div className="box-shadow bg-white dark:bg-zinc-800">
+        <div className="box-shadow bg-white dark:bg-zinc-700">
           <div className="inline-block">
             <Image
               src="/avatar.png"
@@ -26,7 +26,7 @@ export default function Home() {
           </p>
         </div>
 
-        <SkillsBlock className="box-shadow bg-white dark:bg-zinc-800" />
+        <SkillsBlock className="box-shadow bg-white dark:bg-zinc-700" />
       </div>
     </section>
   );

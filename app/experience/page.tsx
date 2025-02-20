@@ -16,7 +16,7 @@ export default function Page() {
 				<div>
 					{experience.map((item) => {
 						return (
-							<div key={item.company} className="box-shadow p-6 mb-12 bg-white dark:bg-zinc-800">
+							<div key={item.company} className="box-shadow p-6 mb-12 bg-white dark:bg-zinc-700">
 								<div className="grid md:grid-cols-8 md:gap-4">
 									<div className="md:col-span-2">
 										{item.dateFrom} &mdash; {item.dateTo}
