@@ -11,7 +11,7 @@ export default function FloatContainer() {
 			<div className="flex mr-8">
 				<Link
 					id="download-resume"
-					href="/resume.docx"
+					href="/resume.pdf"
 					className="group text-8 opacity-50 text-[color:var(--alt-fg-color)] bg-[color:var(--alt-bg-color)] hover:text-[color:var(--alt-fg-color)] focus:text-[color:var(--alt-fg-color)] hover:opacity-50 focus:opacity-50 md:hover:text-[color:var(--link-color)] md:focus:text-[color:var(--link-color)] md:hover:opacity-100 md:focus:opacity-100"
 				>
 					<i className="fa-solid fa-cloud-arrow-down"></i>
