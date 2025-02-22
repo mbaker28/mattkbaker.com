@@ -324,7 +324,7 @@ export const experience: Experience[] = [
 		href: 'https://creekstonefarms.com',
 		dateFrom: 2017,
 		dateTo: 2021,
-		jobDescription: `Used PHP and JavaScript to design web-based reports for employees. Wrote PHP scripts to send automated reports and fix data within production database. Used C# and ASP.NET to write and maintain the New Product Request application, greatly improving the process for employees to create new products. Developed automated process for Walmart Inc. to pull live data to SFTP server for the SAP. Trained coworkers on employee dashboard to improve effectiveness and instigated suggestions for improvements. Created views and automated reports in ERP system using SQL Server. Mentored new programmers and trained them on the dashboard application and technology stack.`,
+		jobDescription: `Used PHP and JavaScript to design web-based reports for employees. Wrote PHP scripts to send automated reports and fix data within production database. Led an effort to update codebase from PHP 5.4 to PHP 8 and redesigned the system in Laravel to improve maintainability, security, and performance. Used C# and ASP.NET to write and maintain the New Product Request application, greatly improving the process for employees to create new products. Developed automated process for Walmart Inc. to pull live data to SFTP server for the SAP. Trained coworkers on employee dashboard to improve effectiveness and instigated suggestions for improvements. Created views and automated reports in ERP system using SQL Server. Mentored new programmers and trained them on the dashboard application and technology stack.`,
 		technologies: [
 			'PHP',
 			'JavaScript',
