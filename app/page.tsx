@@ -22,7 +22,7 @@ export default function Home() {
           </div>
           <h1>Matthew Baker</h1>
           <p className="text-justify hyphens-auto">
-            I am a software developer with {new Date().getUTCFullYear() - new Date('2017').getUTCFullYear()} years of PHP development experience in creating applications and frameworks such as <a href="https://symfony.com" target="_blank">Symfony</a> and developing plugins and themes for <a href="https://wordpress.org" target="_blank">WordPress</a>. I am experienced in developing user interfaces with HTML, CSS, and JavaScript and have a solid understanding of SQL.
+            I am a full stack software developer with {new Date().getUTCFullYear() - new Date('2017').getUTCFullYear()} years of experience in designing and maintaining scalable web applications using front-end and back-end technologies. Proficient in HTML, CSS, JavaScript/TypeScript (React, Next.js), Node.js, and PHP with expertise in database management (MySQL, SQL Server).
           </p>
         </div>
 
