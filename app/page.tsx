@@ -22,7 +22,7 @@ export default function Home() {
           </div>
           <h1>Matthew Baker</h1>
           <p className="text-justify hyphens-auto">
-            I am a full stack software developer with {new Date().getUTCFullYear() - new Date('2017').getUTCFullYear()} years of experience in designing and maintaining scalable web applications using front-end and back-end technologies. Proficient in HTML, CSS, JavaScript/TypeScript (React, Next.js), Node.js, and PHP with expertise in database management (MySQL, SQL Server).
+            I am a full stack software engineer with {new Date().getUTCFullYear() - new Date('2017').getUTCFullYear()} years of experience in designing and maintaining scalable web applications using front-end and back-end technologies. Proficient in HTML, CSS, JavaScript/TypeScript (React, Next.js), Node.js, and PHP with expertise in database management (MySQL, SQL Server).
           </p>
         </div>
 
