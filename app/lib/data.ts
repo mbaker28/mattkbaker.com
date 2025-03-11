@@ -376,5 +376,22 @@ export const projects: Project[] = [
 			'Symfony',
 			'MySQL'
 		]
+	},
+	{
+		title:'Mad Libs',
+		href: 'https://github.com/mbaker28/madlibs',
+		description: `A mad libs mobile app written in <a href="https://reactnative.dev" class="no-underline hover:text-[color:var(--link-color)]" target="_blank">React Native</a>.`,
+		image: {
+			src: '/mad-libs-thumb.png',
+			alt: 'Mad Libs',
+			width: 1080,
+			height: 810
+		},
+		technologies: [
+			'JavaScript',
+			'TypeScript',
+			'React',
+			'React Native'
+		]
 	}
 ];
