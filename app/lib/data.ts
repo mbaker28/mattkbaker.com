@@ -25,16 +25,6 @@ export const skills: Skills[] = [
 				href: 'https://www.python.org'
 			},
 			{
-				title: 'C#',
-				image: {
-					src: '/skills/csharp.png',
-					alt: 'C#',
-					width: 512,
-					height: 512
-				},
-				href: 'https://learn.microsoft.com/en-us/dotnet/csharp'
-			},
-			{
 				title: 'HTML5',
 				image: {
 					src: '/skills/html5.png',
@@ -265,6 +255,16 @@ export const skills: Skills[] = [
 				href: 'https://laravel.com'
 			},
 			{
+				title: 'CodeIgniter 4',
+				image: {
+					src: '/skills/codeigniter.png',
+					alt: 'CodeIgniter 4',
+					width: 512,
+					height: 512
+				},
+				href: 'https://codeigniter.com'
+			},
+			{
 				title: 'Django',
 				image: {
 					src: '/skills/django.png',
@@ -273,16 +273,6 @@ export const skills: Skills[] = [
 					height: 512
 				},
 				href: 'https://djangoproject.com'
-			},
-			{
-				title: '.NET',
-				image: {
-					src: '/skills/dotnet.png',
-					alt: '.NET',
-					width: 512,
-					height: 512
-				},
-				href: 'https://dotnet.microsoft.com'
 			},
 			{
 				title: 'Tailwind CSS',
