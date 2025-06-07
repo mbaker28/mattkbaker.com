@@ -37,8 +37,6 @@ export default function Contact() {
 		}
 	}
 
-	console.log('site key', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY);
-
 	return (
 		<form action={formAction}>
 			<div className="mb-5">
