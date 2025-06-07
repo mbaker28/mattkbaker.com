@@ -10,18 +10,21 @@
   },
   "dependencies": {
     "@types/nodemailer": "^6.4.17",
+    "axios": "^1.9.0",
     "clsx": "^2.1.1",
     "next": "15.2.4",
     "next-themes": "^0.4.6",
     "nodemailer": "^6.10.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-google-recaptcha": "^3.1.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-google-recaptcha": "^2.1.9",
     "postcss": "^8",
     "postcss-nesting": "^13.0.1",
     "tailwindcss": "^3.4.17",

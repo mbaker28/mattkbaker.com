@@ -1,7 +1,8 @@
 'use client';
 
-import { useActionState } from 'react';
+import { FormEvent, useActionState, useState, useRef } from 'react';
 import { sendMail } from "@/app/lib/sendMail";
+import ReCAPTCHA from 'react-google-recaptcha';
 import styles from "@/app/styles/submit-button.module.css";
 
 const initialState = {
@@ -13,8 +14,28 @@ const initialState = {
 
 export default function Contact() {
 	const [state, formAction, isPending] = useActionState(sendMail, initialState);
+	const [isVerified, setIsVerified] = useState(false);
+	const recaptcha = useRef<ReCAPTCHA>(null);
 
-	const buttonClass = isPending ? styles.loading : '';
+	const buttonClass = !isVerified ? styles.disabled : isPending ? styles.loading : '';
+
+	const handleCaptchaSubmission = async (token: string | null) => {
+		try {
+			if (token) {
+				await fetch('/api/recaptcha', {
+					method: 'POST',
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ token })
+				});
+				setIsVerified(true);
+			}
+		} catch (error) {
+			setIsVerified(false);
+		}
+	}
 
 	return (
 		<form action={formAction}>
@@ -70,9 +91,20 @@ export default function Contact() {
 				/>
 			</div>
 			<div className="mb-5">
-				<button className={`${buttonClass} ${styles.button} hover:bg-purple-800 rounded-md bg-purple-500 py-3 px-8 font-semibold text-white outline-none`}>
+				<button
+					className={`${buttonClass} ${styles.button} hover:bg-purple-800 rounded-md bg-purple-500 py-3 px-8 font-semibold text-white outline-none`}
+					disabled={!isVerified || isPending}
+				>
 					<span>Submit</span>
 				</button>
+			</div>
+			<div className='mb-5'>
+				<ReCAPTCHA
+					ref={recaptcha}
+					sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+					onChange={handleCaptchaSubmission}
+					onExpired={() => setIsVerified(false)}
+				/>
 			</div>
 			<div>
 				<span aria-live='polite' role="status" className="w-full font-medium">{state?.status}</span>

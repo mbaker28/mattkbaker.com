@@ -27,6 +27,12 @@
 			animation: button-loading-spinner 1s ease infinite;
 		}
 	}
+
+	&.disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
 }
 
 @keyframes button-loading-spinner {
