@@ -311,3 +311,7 @@ img {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
+.grecaptcha-badge {
+  visibility: hidden;
+}

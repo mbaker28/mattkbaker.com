@@ -1,8 +1,7 @@
 'use client';
 
-import { FormEvent, useActionState, useState, useRef } from 'react';
+import { useActionState, useState, useRef, FormEvent } from 'react';
 import { sendMail } from "@/app/lib/sendMail";
-import ReCAPTCHA from 'react-google-recaptcha';
 import styles from "@/app/styles/submit-button.module.css";
 
 const initialState = {
@@ -12,33 +11,39 @@ const initialState = {
 	status: ''
 };
 
+declare const grecaptcha: any;
+
 export default function Contact() {
 	const [state, formAction, isPending] = useActionState(sendMail, initialState);
-	const [isVerified, setIsVerified] = useState(false);
-	const recaptcha = useRef<ReCAPTCHA>(null);
+	const [localPending, setLocalPending] = useState(false);
+	const formRef = useRef<HTMLFormElement>(null);
 
-	const buttonClass = !isVerified ? styles.disabled : isPending ? styles.loading : '';
+	const isFormPending = isPending || localPending;
 
-	const handleCaptchaSubmission = async (token: string | null) => {
-		try {
-			if (token) {
-				await fetch('/api/recaptcha', {
-					method: 'POST',
-					headers: {
-						'Accept': 'application/json',
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({ token })
-				});
-				setIsVerified(true);
-			}
-		} catch (error) {
-			setIsVerified(false);
+	const buttonClass = isFormPending ? styles.loading : '';
+
+	const handleSubmit = async () => {
+		setLocalPending(true);
+		const token = await grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '', { action: 'submit' });
+
+		const form = formRef.current;
+		if (!form) {
+			setLocalPending(false);
+			return;
 		}
+
+		const hiddenInput = document.createElement('input');
+		hiddenInput.type = 'hidden';
+		hiddenInput.name = 'recaptchaToken';
+		hiddenInput.value = token;
+		form.appendChild(hiddenInput);
+
+		form.requestSubmit();
+		setLocalPending(false);
 	}
 
 	return (
-		<form action={formAction}>
+		<form ref={formRef} action={formAction}>
 			<div className="mb-5">
 				<label
 					htmlFor="name"
@@ -93,21 +98,17 @@ export default function Contact() {
 			<div className="mb-5">
 				<button
 					className={`${buttonClass} ${styles.button} hover:bg-purple-800 rounded-md bg-purple-500 py-3 px-8 font-semibold text-white outline-none`}
-					disabled={!isVerified || isPending}
+					onClick={handleSubmit}
+					disabled={isFormPending}
 				>
 					<span>Submit</span>
 				</button>
 			</div>
-			<div className='mb-5'>
-				<ReCAPTCHA
-					ref={recaptcha}
-					sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-					onChange={handleCaptchaSubmission}
-					onExpired={() => setIsVerified(false)}
-				/>
-			</div>
 			<div>
 				<span aria-live='polite' role="status" className="w-full font-medium">{state?.status}</span>
+			</div>
+			<div className="mt-6 text-[1.2rem] text-gray-400">
+				This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
 			</div>
 		</form>
 	);

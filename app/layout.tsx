@@ -38,6 +38,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>" />
         <Script src="https://kit.fontawesome.com/2736e4c60a.js" crossOrigin="anonymous" />
+        <Script src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`} />
       </head>
       <body
         className={`antialiased`}

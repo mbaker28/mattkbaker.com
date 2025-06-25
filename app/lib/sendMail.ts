@@ -4,6 +4,7 @@ import nodemailer from 'nodemailer';
 import { z } from 'zod';
 import Mail from 'nodemailer/lib/mailer';
 import { revalidatePath } from 'next/cache';
+import verifyRecaptcha from './verifyRecaptcha';
 
 export async function sendMail(
 	prevState: {
@@ -14,6 +15,13 @@ export async function sendMail(
 	},
 	formData: FormData
 ) {
+	const token = formData.get('recaptchaToken');
+	const isValid = await verifyRecaptcha(String(token));
+
+	if (!isValid) {
+		return { ...prevState, status: 'reCAPTCHA verification failed' };
+	}
+
 	const FormSchema = z.object({
 		email: z.string(),
 		name: z.string(),
