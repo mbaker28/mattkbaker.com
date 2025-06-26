@@ -23,7 +23,7 @@ export type Project = {
 	title: string,
 	href: string,
 	image: ImageSource,
-	description?: string,
+	description: string,
 	technologies: string[]
 };
 
