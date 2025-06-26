@@ -13,9 +13,9 @@ export type Experience = {
 	company: string,
 	jobTitle: string,
 	href: string,
-	dateFrom: string|number,
-	dateTo: string|number,
-	jobDescription: string,
+	dateFrom: number,
+	dateTo: 'Present'|number,
+	jobDescription?: string,
 	technologies: string[]
 };
 
@@ -23,7 +23,7 @@ export type Project = {
 	title: string,
 	href: string,
 	image: ImageSource,
-	description: string,
+	description?: string,
 	technologies: string[]
 };
 

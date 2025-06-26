@@ -290,11 +290,30 @@ export const skills: Skills[] = [
 
 export const experience: Experience[] = [
 	{
+		company: 'Overfuel Inc.',
+		jobTitle: 'Software Engineer',
+		href: 'https://overfuel.com',
+		dateFrom: 2025,
+		dateTo: 'Present',
+		technologies: [
+			'PHP',
+			'JavaScript',
+			'Python',
+			'Codeigniter4',
+			'WordPress',
+			'Next.js',
+			'CSS',
+			'MySQL',
+			'AWS'
+		]
+	},
+
+	{
 		company: 'Wolfe Automotive Group LLC',
 		jobTitle: 'PHP Developer',
 		href: 'https://jaywolfe.com',
 		dateFrom: 2021,
-		dateTo: 'Present',
+		dateTo: 2025,
 		jobDescription: `Wrote server-side and client-side code for WordPress plugins using PHP, HTML, CSS, and JavaScript. Wrote VIN and license plate scanner using OCR technology to significantly improve company's process of checking in customer vehicles for service. Created plugin and theme updater using WordPress's filter hooks to keep plugins in sync across all dealership sites. Created store locator to greatly improve scheduling service appointments across several stores.`,
 		technologies: [
 			'PHP',
