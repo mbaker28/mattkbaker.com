@@ -366,6 +366,25 @@ export const projects: Project[] = [
 		]
 	},
 	{
+		title: 'Jack Answers',
+		href: 'https://github.com/mbaker28/jackanswers',
+		description: `A small app inspired by <a href="https://peteranswers.com" class="no-underline hover:text-[color:var(--link-color)]" target="_blank">Peter Answers</a>.`,
+		image: {
+			src: '/jack-answers-thumb.png',
+			alt: 'Jack Answers',
+			width: 2358,
+			height: 1346
+		},
+		technologies: [
+			'PHP',
+			'JavaScript',
+			'CSS',
+			'Symfony',
+			'Stimulus',
+			'Turbo'
+		]
+	},
+	{
 		title: 'URL Shortener',
 		href: 'https://github.com/mbaker28/url-shortener',
 		description: `A simple URL Shortener app written with <a href="https://symfony.com" class="no-underline hover:text-[color:var(--link-color)]" target="_blank">Symfony</a> and <a href="https://react.dev" class="no-underline hover:text-[color:var(--link-color)]" target="_blank">React</a>.`,
