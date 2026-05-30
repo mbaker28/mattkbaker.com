@@ -295,6 +295,7 @@ export const experience: Experience[] = [
 		href: 'https://overfuel.com',
 		dateFrom: 2025,
 		dateTo: 'Present',
+		jobDescription: 'Overfuel redefines what a dealership website should be. More than a digital storefront, our platform is the engine that drives visibility, trust, and growth in today’s market. Built for the modern shopper and optimized for the evolving search and AI landscapes, Overfuel delivers unmatched reach—from Google Search and Business Profiles to Map Pack, AI Overviews, and beyond.',
 		technologies: [
 			'PHP',
 			'JavaScript',
